@@ -1,8 +1,9 @@
 package pl.edu.pwr.s241926.snake2020;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -14,9 +15,11 @@ public class DrawGame extends View
     private int xCor=10, yCor=10;
     RepaintThread repaint = new RepaintThread();
     Thread t1 = new Thread(repaint);
+    AllComponentsController controller;
     public DrawGame(Context context, AttributeSet attributeSet)
     {
         super(context,attributeSet);
+        controller = new AllComponentsController(); setImages();
         p=new Paint(Paint.ANTI_ALIAS_FLAG);
         t1.start();
     }
@@ -24,8 +27,7 @@ public class DrawGame extends View
     public void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
-        p.setColor(Color.RED);
-        canvas.drawRect(xCor,yCor,getWidth(),getHeight(),p);
+        controller.drawGameComponents(canvas,p,getWidth(),getHeight());
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)
@@ -55,5 +57,15 @@ public class DrawGame extends View
         {
             running = false;
         }
+    }
+    public void setImages()
+    {
+        Bitmap image_background = BitmapFactory.decodeResource(getResources(),R.drawable.tlo);
+        Bitmap leftBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_prawo);
+        Bitmap  rightBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_lewo);
+        Bitmap  upBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_dol);
+        Bitmap  downBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_gore);
+        Bitmap  inTheCorner = BitmapFactory.decodeResource(getResources(),R.drawable.tlo);
+        controller.setPictures(image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner);
     }
 }
