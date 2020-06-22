@@ -65,7 +65,10 @@ public class DrawGame extends View
         Bitmap  rightBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_lewo);
         Bitmap  upBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_dol);
         Bitmap  downBorder = BitmapFactory.decodeResource(getResources(),R.drawable.w_gore);
-        Bitmap  inTheCorner = BitmapFactory.decodeResource(getResources(),R.drawable.tlo);
-        controller.setPictures(image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner);
+        Bitmap  inTheCorner = BitmapFactory.decodeResource(getResources(),R.drawable.jablko);
+        Bitmap  imageSnakeHead = BitmapFactory.decodeResource(getResources(),R.drawable.cialo);
+        Bitmap  imageSnakeBody = BitmapFactory.decodeResource(getResources(),R.drawable.cialo);
+        Bitmap  imageFruit = BitmapFactory.decodeResource(getResources(),R.drawable.jablko);
+        controller.setPictures(image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner,imageSnakeHead, imageSnakeBody, imageFruit);
     }
 }
