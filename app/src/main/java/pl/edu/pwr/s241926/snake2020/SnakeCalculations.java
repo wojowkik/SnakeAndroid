@@ -6,7 +6,7 @@ import java.util.Random;
 public class SnakeCalculations
 {
     ArrayList<SnakeBody> snakeBody = new ArrayList<>(5);
-    private int width=1000, height=1000, pictureSize, xHeadPosition, yHeadPosition, direction, xFruit, yFruit,snakeSize=3;
+    private int width=200, height=200, pictureSize, xHeadPosition, yHeadPosition, direction, xFruit, yFruit,snakeSize=3;
     private boolean gameOver=false, snakeCanMove=true;
     private Random randGenerator = new Random();
     private Watek1 w = new Watek1();
