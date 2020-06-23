@@ -29,6 +29,7 @@ public class DrawGame extends View
         super.onDraw(canvas);
         width=getWidth(); height=getHeight();
         controller.drawGameComponents(canvas,p,width,height);
+        if(controller.gameOver(canvas,p, width,height)) {repaint.stopme();}
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)

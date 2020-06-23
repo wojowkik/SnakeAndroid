@@ -31,7 +31,20 @@ class AllComponentsController
         map.drawPlayground(canvas,p, width,height-160);
         snake.setBoardSize(width,height-160);
         snake.drawSnake(canvas,p);
-
+    }
+    boolean gameOver(Canvas canvas, Paint p, int width, int height)
+    {
+        if(snake.gameOver())
+        {
+            p.setColor(Color.BLACK);
+            canvas.drawRect(0,0,width,height,p);
+            p.setColor(Color.RED);
+            p.setTextSize(100);
+            canvas.drawText("Game Over", (width/2)-250, height/2,p);
+            canvas.drawText("Wynik: "+snake.getSnakeSize(), (width/2)-180, (height/2)+100,p);
+            return true;
+        }
+        else return false;
     }
     void setPictures(Bitmap image_background, Bitmap leftBorder, Bitmap rightBorder, Bitmap upBorder,
                      Bitmap downBorder, Bitmap inTheCorner, Bitmap imageSnakeHead, Bitmap imageSnakeBody, Bitmap imageFruit,
