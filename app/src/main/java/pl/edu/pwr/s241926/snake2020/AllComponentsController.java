@@ -20,15 +20,18 @@ class AllComponentsController
     {
         p.setColor(Color.BLACK);
         canvas.drawRect(0,0,width,height,p);
-        canvas.drawBitmap(leftControl,(width/2)-120,height-120,p);
-        canvas.drawBitmap(rightControl,(width/2)+40,height-120,p);
-        canvas.drawBitmap(downControl,(width/2)-40,height-80,p);
-        canvas.drawBitmap(upControl,(width/2)-40,height-160,p);
+        canvas.drawBitmap(leftControl,(width/2)-240,height-260,p);
+        canvas.drawBitmap(rightControl,(width/2)+80,height-260,p);
+        canvas.drawBitmap(downControl,(width/2)-80,height-160,p);
+        canvas.drawBitmap(upControl,(width/2)-80,height-360,p);//wyrysowanie przyciskow kontroli
         width=width/pictureSize;    width=width*pictureSize;
         height=(height-160)/pictureSize;  height=height*pictureSize;//wyrównywanie krawedzi
+        p.setColor(Color.RED); p.setTextSize(40);
+        canvas.drawText("Wynik: "+snake.getSnakeSize(), width-250, height-100,p);
         map.drawPlayground(canvas,p, width,height-160);
         snake.setBoardSize(width,height-160);
         snake.drawSnake(canvas,p);
+
     }
     void setPictures(Bitmap image_background, Bitmap leftBorder, Bitmap rightBorder, Bitmap upBorder,
                      Bitmap downBorder, Bitmap inTheCorner, Bitmap imageSnakeHead, Bitmap imageSnakeBody, Bitmap imageFruit,

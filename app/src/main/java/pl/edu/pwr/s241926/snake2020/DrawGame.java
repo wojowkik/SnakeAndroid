@@ -36,15 +36,15 @@ public class DrawGame extends View
         performClick();
         int x=(int) event.getX();
         int y=(int) event.getY();
-        if(x>width/2-40 && x<width/2+40 && y>height-160 && y<height-80)
+        if(x>width/2-120 && x<width/2+120 && y>height-300 && y<height-160)
             controller.snakeControl(3);
-        if(x>width/2-120 && x<width/2-40 && y>height-120 && y<height-40)
+        if(x>width/2-250 && x<width/2-120 && y>height-200 && y<height-120)
             controller.snakeControl(2);
-        if(x>width/2-40 && x<width/2+40 && y>height-80 && y<height)
+        if(x>width/2-120 && x<width/2+120 && y>height-160 && y<height)
             controller.snakeControl(1);
-        if(x>width/2+40 && x<width/2+120 && y>height-120 && y<height-40)
+        if(x>width/2+120 && x<width/2+230 && y>height-200 && y<height-120)
             controller.snakeControl(0);
-       return true;//canvas.drawBitmap(leftControl,(width/2)-120,height-120,p);
+       return true;
     }
     @Override
     public boolean performClick() {
