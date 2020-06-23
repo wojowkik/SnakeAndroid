@@ -32,10 +32,10 @@ class Board
             }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////BORDER
-        for(int i=0 ; i<width ; i+=pictureSize){canvas.drawBitmap(upBorder,i,0,p);}
-        for(int i=0 ; i<width ; i+=pictureSize){canvas.drawBitmap(downBorder,i,height-pictureSize,p);}
-        for(int i=0 ; i<height ; i+=pictureSize){canvas.drawBitmap(leftBorder,0,i,p);}
-        for(int i=0 ; i<height ; i+=pictureSize){canvas.drawBitmap(rightBorder,width-pictureSize,i,p);}
+        for(int i=0 ; i<width ; i+=pictureSize)             {canvas.drawBitmap(upBorder,i,0,p);}
+        for(int i=0 ; i<width ; i+=pictureSize)             {canvas.drawBitmap(downBorder,i,height-pictureSize,p);}
+        for(int i=0 ; i<height-pictureSize ; i+=pictureSize){canvas.drawBitmap(leftBorder,0,i,p);}
+        for(int i=0 ; i<height-pictureSize ; i+=pictureSize){canvas.drawBitmap(rightBorder,width-pictureSize,i,p);}
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////CORNER
         canvas.drawBitmap(inTheCorner,0,0,p);
         canvas.drawBitmap(inTheCorner,width-pictureSize,0,p);

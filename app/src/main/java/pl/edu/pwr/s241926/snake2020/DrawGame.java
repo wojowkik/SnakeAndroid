@@ -36,15 +36,15 @@ public class DrawGame extends View
         performClick();
         int x=(int) event.getX();
         int y=(int) event.getY();
-        if(x>width/2 && y>height/2 && y<height-height/4)
+        if(x>width/2-40 && x<width/2+40 && y>height-160 && y<height-80)
             controller.snakeControl(3);
-        if(x>width/2 && y>height-height/4)
-            controller.snakeControl(1);
-        if(x<width/8)
+        if(x>width/2-120 && x<width/2-40 && y>height-120 && y<height-40)
             controller.snakeControl(2);
-        if(x>width/8 && x<width/4)
+        if(x>width/2-40 && x<width/2+40 && y>height-80 && y<height)
+            controller.snakeControl(1);
+        if(x>width/2+40 && x<width/2+120 && y>height-120 && y<height-40)
             controller.snakeControl(0);
-        return true;
+       return true;//canvas.drawBitmap(leftControl,(width/2)-120,height-120,p);
     }
     @Override
     public boolean performClick() {
@@ -85,6 +85,12 @@ public class DrawGame extends View
         Bitmap  imageSnakeHead = BitmapFactory.decodeResource(getResources(),R.drawable.cialo);
         Bitmap  imageSnakeBody = BitmapFactory.decodeResource(getResources(),R.drawable.cialo);
         Bitmap  imageFruit = BitmapFactory.decodeResource(getResources(),R.drawable.jablko);
-        controller.setPictures(image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner,imageSnakeHead, imageSnakeBody, imageFruit);
+        Bitmap upControl = BitmapFactory.decodeResource(getResources(),R.drawable.up);
+        Bitmap downControl = BitmapFactory.decodeResource(getResources(),R.drawable.down);
+        Bitmap leftControl = BitmapFactory.decodeResource(getResources(),R.drawable.left);
+        Bitmap rightControl = BitmapFactory.decodeResource(getResources(),R.drawable.right);
+
+        controller.setPictures(image_background, leftBorder,rightBorder,upBorder,downBorder, inTheCorner,
+                imageSnakeHead, imageSnakeBody, imageFruit, upControl,downControl,leftControl,rightControl);
     }
 }
