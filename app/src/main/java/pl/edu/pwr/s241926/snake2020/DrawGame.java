@@ -12,7 +12,7 @@ import android.view.View;
 public class DrawGame extends View
 {
     private Paint p;
-    private int xCor=10, yCor=10;
+    private int width, height;
     RepaintThread repaint = new RepaintThread();
     Thread t1 = new Thread(repaint);
     AllComponentsController controller;
@@ -27,14 +27,30 @@ public class DrawGame extends View
     public void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
-        controller.drawGameComponents(canvas,p,getWidth(),getHeight());
+        width=getWidth(); height=getHeight();
+        controller.drawGameComponents(canvas,p,width,height);
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
-        xCor++;yCor++;
+        performClick();
+        int x=(int) event.getX();
+        int y=(int) event.getY();
+        if(x>width/2 && y>height/2 && y<height-height/4)
+            controller.snakeControl(3);
+        if(x>width/2 && y>height-height/4)
+            controller.snakeControl(1);
+        if(x<width/8)
+            controller.snakeControl(2);
+        if(x>width/8 && x<width/4)
+            controller.snakeControl(0);
         return true;
     }
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     class RepaintThread implements Runnable
     {
         private volatile boolean running;

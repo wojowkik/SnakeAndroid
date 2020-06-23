@@ -26,4 +26,8 @@ class AllComponentsController
         map.setPicures(image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner);
         snake.setPictures(imageSnakeHead,imageSnakeBody,imageFruit);
     }
+    void snakeControl(int controlCode)
+    {
+        snake.changeDirection(controlCode);
+    }
 }
