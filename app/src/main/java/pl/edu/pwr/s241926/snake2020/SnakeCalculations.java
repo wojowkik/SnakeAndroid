@@ -124,4 +124,5 @@ public class SnakeCalculations
     int getxFruit(){return xFruit;}
     int getyFruit(){return yFruit;}
     int getSnakeSize(){return snakeSize;}
+    int getDirection(){return direction;}
 }
