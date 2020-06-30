@@ -3,7 +3,7 @@ package pl.edu.pwr.s241926.snake2020;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SnakeCalculations
+class SnakeCalculations
 {
     ArrayList<SnakeBody> snakeBody = new ArrayList<>(5);
     private int width=200, height=200, pictureSize, xHeadPosition, yHeadPosition, direction, xFruit, yFruit,snakeSize=3;
@@ -61,7 +61,8 @@ public class SnakeCalculations
         {
             if(snakeBody.get(i).x==xHeadPosition && snakeBody.get(i).y==yHeadPosition)
             {
-                System.out.println("Game Over - Snake Hit"); return true;
+                System.out.println("Game Over - Snake Hit");
+                return true;
             }
         }
         return false;
@@ -70,10 +71,16 @@ public class SnakeCalculations
         int tmp;
         tmp=(width/pictureSize)-1;
         if(xHeadPosition==0 || xHeadPosition==tmp)
-        {System.out.println("Game Over - Board Hit");return true;}
+        {
+            System.out.println("Game Over - Board Hit");
+            return true;
+        }
         tmp=(height/pictureSize)-1;
         if(yHeadPosition==0 || yHeadPosition==tmp)
-        {System.out.println("Game Over - Board Hit");return true;}
+        {
+            System.out.println("Game Over - Board Hit");
+            return true;
+        }
         return false;
     }
     private void endGame(){

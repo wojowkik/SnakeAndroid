@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 
-public class Snake
+class Snake
 {
     private Bitmap imageSnakeHead, snakeHeadRotated, imageSnakeBody, imageFruit;
     private int width=1000, height=1000;

@@ -7,7 +7,7 @@ import android.graphics.Paint;
 class Board
 {
     private int  pictureSize;
-    private Bitmap image_background, leftBorder,rightBorder,upBorder,downBorder,inTheCorner;
+    private Bitmap imageBackground, leftBorder,rightBorder,upBorder,downBorder,inTheCorner;
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     Board(int pictureSize)
     {
@@ -15,7 +15,7 @@ class Board
     }
     void setPicures(Bitmap image_background,Bitmap leftBorder,Bitmap rightBorder,Bitmap upBorder,Bitmap downBorder,Bitmap inTheCorner)
     {
-        this.image_background=image_background;
+        this.imageBackground=image_background;
         this.leftBorder=leftBorder;
         this.rightBorder=rightBorder;
         this.upBorder=upBorder;
@@ -28,7 +28,7 @@ class Board
         {
             for(int j=pictureSize ; j<height-pictureSize ; j+=pictureSize) //for(int j=30 ; j<480-30 ; j+=30)
             {
-                canvas.drawBitmap(image_background,i,j,p); // szerokosc // plansza
+                canvas.drawBitmap(imageBackground,i,j,p); // szerokosc // plansza
             }
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////BORDER
